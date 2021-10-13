@@ -29,4 +29,8 @@ public class BasePage {
         Driver.driver.findElement(by).sendKeys(value, Keys.ENTER);
     }
 
+    protected void sendKey(By by,String value) {
+        explicitlyWaitForElementToBeClickable(by);
+        Driver.driver.findElement(by).sendKeys(value);
+    }
 }

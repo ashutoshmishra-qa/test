@@ -24,9 +24,9 @@ public class VerifyPrice extends BaseTest {
                 .clickAddToCartButton();
 
         FlipkartViewCartPage cart = new FlipkartViewCartPage();
-        cart.clickPlusSignButton();
+        cart.enterQuanity();
         String totalPrice = Driver.driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/span[1]/div[1]/div[1]/span[1]")).getText();
-        System.out.println("Total Price is" + totalPrice);
+        System.out.println("Total Price is " + totalPrice);
     }
 
     @Test

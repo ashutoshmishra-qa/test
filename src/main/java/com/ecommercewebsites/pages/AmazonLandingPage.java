@@ -8,7 +8,6 @@ public class AmazonLandingPage extends BasePage{
     private final By searchTab = By.id("twotabsearchtextbox");
     private final By firstItem = By.id("tbd");
 
-
     public String getTitle(){
         return getPageTitle();
     }

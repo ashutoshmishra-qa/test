@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 
 public class FlipkartViewCartPage extends BasePage{
 
-    private final By plusSignButton = By.xpath("//button[normalize-space()='+']");
+    private final By quantity = By.xpath("//input[@class='_253qQJ']");
 
-    public FlipkartViewCartPage clickPlusSignButton() {
-        click(plusSignButton);
+    public FlipkartViewCartPage enterQuanity() {
+        sendKey(quantity, "2");
         return this;
     }
 }

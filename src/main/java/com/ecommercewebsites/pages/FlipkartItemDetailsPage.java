@@ -9,7 +9,7 @@ public class FlipkartItemDetailsPage extends BasePage{
     private final By addToCartButton =  By.xpath("//button[normalize-space()='ADD TO CART']");
 
     public FlipkartItemDetailsPage inputPincode() {
-        sendKeys(pinCode, "160007");
+        sendKey(pinCode, "160007");
         return this;
     }
 
