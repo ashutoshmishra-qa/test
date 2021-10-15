@@ -20,7 +20,7 @@ public final class FlipkartLandingPage extends BasePage {
     }
 
     public FlipkartLandingPage inputSearchTab() {
-        sendKeys(searchTab, "VU tv");
+        sendKeys(searchTab, "Iphone 11");
         return this;
     }
 

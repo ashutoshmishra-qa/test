@@ -4,6 +4,7 @@ package com.ecommercewebsites.pages;
 import com.ecommercewebsites.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -33,4 +34,14 @@ public class BasePage {
         explicitlyWaitForElementToBeClickable(by);
         Driver.driver.findElement(by).sendKeys(value);
     }
+
+    protected void openNewTab(String url) {
+        Driver.driver.switchTo().newWindow(WindowType.TAB);
+        Driver.driver.get(url);
+    }
+
+    protected void getText(By by) {
+        Driver.driver.findElement(by).getText();
+    }
+
 }
