@@ -1,17 +1,11 @@
 package com.ecommercewebsites.pages;
 
-
 import com.ecommercewebsites.driver.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
-
 
 public class AmazonLandingPage extends BasePage{
 
     private final By searchTab = By.id("twotabsearchtextbox");
-    private final By items = By.xpath("//*[@class='a-link-normal']");
 
     public AmazonLandingPage navigateToAmazon () {
         openNewTab("https://www.amazon.in/");
@@ -37,7 +31,4 @@ public class AmazonLandingPage extends BasePage{
         }
         return this;
     }
-    //public AmazonLandingPage itemList() {
-        //List<WebElement> items = Driver.driver.findElements(By.xpath("//*[@class='a-link-normal']"));
-    //}
 }

@@ -40,8 +40,9 @@ public class BasePage {
         Driver.driver.get(url);
     }
 
-    protected void getText(By by) {
-        Driver.driver.findElement(by).getText();
+    protected String getText(By by) {
+       String text = Driver.driver.findElement(by).getText();
+       return text;
     }
 
 }

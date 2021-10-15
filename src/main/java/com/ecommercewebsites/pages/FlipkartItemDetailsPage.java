@@ -1,6 +1,5 @@
 package com.ecommercewebsites.pages;
 
-import com.ecommercewebsites.driver.Driver;
 import org.openqa.selenium.By;
 
 public class FlipkartItemDetailsPage extends BasePage{
@@ -26,14 +25,11 @@ public class FlipkartItemDetailsPage extends BasePage{
         return this;
     }
 
-    public FlipkartItemDetailsPage getItemName() {
-        getText(itemName);
-        return this;
+    public String getItemName() {
+        return getText(itemName);
     }
 
-    public FlipkartItemDetailsPage getItemPrice() {
-        getText(itemName);
-        return this;
+    public String getItemPrice() {
+        return getText(itemPrice);
     }
-
 }

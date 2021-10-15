@@ -1,14 +1,12 @@
 package com.ecommercewebsite.tests;
+
 import com.ecommercewebsites.driver.Driver;
 import com.ecommercewebsites.pages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.List;
-
-import static java.lang.Integer.parseInt;
 
 public class VerifyPrice extends BaseTest {
 
@@ -42,8 +40,8 @@ public class VerifyPrice extends BaseTest {
                 .switchTab();
 
         FlipkartItemDetailsPage item = new FlipkartItemDetailsPage();
-        String itemName = item.getItemName().toString();
-        String itemPrice = item.getItemPrice().toString();
+        String itemName = item.getItemName();
+        String itemPrice = item.getItemPrice();
         System.out.println("Price of " + itemName + " in Flipkart is " + itemPrice);
         item.inputPincode()
                 .clickCheckPinButton()
@@ -55,8 +53,14 @@ public class VerifyPrice extends BaseTest {
 
         List<WebElement> items = Driver.driver.findElements(By.tagName("h2"));
         for (int i = 1; i <= items.size(); i++) {
-            if (items.get(i).getText().equalsIgnoreCase(itemName)) {
+            String itemInList = items.get(i).getText().replaceAll("[\\s-(),]", "");
+            String itemToFind = itemName.replaceAll("[\\s-(),]", "");
+            System.out.println(itemInList);
+            System.out.println(itemToFind);
+
+            if (itemInList.equalsIgnoreCase(itemToFind)) {
                 String name = items.get(i).getText();
+                System.out.println(name);
                 Driver.driver.findElement(By.linkText(name)).click();
             }
         }
